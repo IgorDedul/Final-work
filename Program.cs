@@ -7,9 +7,8 @@
 
 Console.WriteLine("Добрый день! Данная программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.");
 Console.WriteLine("");
-Console.WriteLine("Введите 1 если хотите задать массив вручную, в противном случае будет задан по умолчанию:");
-int question = Convert.ToInt32(Console.ReadLine());
-int size = default;
+Console.WriteLine("Введите длину массива, чтобы перейти к ручному вводу, либо поставьте 0 (ноль) чтобы использовать массив заданый по умолчанию:");
+int size = Convert.ToInt32(Console.ReadLine());
 
 string[] NewArray()
 {
@@ -23,22 +22,16 @@ string[] NewArray()
 }
 
 string[] newArray = new string[default];
-if (question == 1) 
+if (size >  0) 
 {
-    Console.WriteLine("Какая длинна должна быть у массива?");
-    size = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("");
-    if (size >  0) 
-    {
         newArray = NewArray();
-    }
-    else Console.WriteLine("Вы ввели некорректную длину массива.");
 }
-else 
+else if (size ==  0) 
 {
    newArray = new string[12] {"Hello", "2", "world", ":-)", "1234", "1567", "-2", "computer science", "Russia", "Denmark", "Kazan", "С#"};
    size = newArray.Length;
 }
+else Console.WriteLine("Вы ввели некорректную длину массива.");
 
 void ArrayPrint(string[] array)
 {
