@@ -1,66 +1,80 @@
-﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+﻿// Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-// 0, 7, 8, -2, -2 -> 2
+// Примеры:
+// [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
+// [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
+// [“Russia”, “Denmark”, “Kazan”] → []
 
-// -1, -7, 567, 89, 223-> 3
-
-
-Console.WriteLine("Добрый день! Данная программа определяет количество положительных введённых вами чисел");
+Console.WriteLine("Добрый день! Данная программа из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.");
 Console.WriteLine("");
-Console.WriteLine("Какое количество чисел вы хотите ввести?");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("");
-int positive = 0;
+Console.WriteLine("Введите 1 если хотите задать массив вручную, в противном случае будет задан по умолчанию:");
+int question = Convert.ToInt32(Console.ReadLine());
+int size = default;
 
-void CorrectInput()
+string[] NewArray()
 {
-    if (size <= 0)
-    {
-        Console.WriteLine("Вы ввели некорректную длину массива.");
-    }
-}
-
-CorrectInput();
-
-int[] NewArray()
-{
-    int[] array = new int [size];
+    string[] array = new string [size];
     for (int i=0; i<size; i++)
     {
-        Console.WriteLine($"Введите {i+1} число:");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Введите {i+1} элемент массива:");
+        array[i] = Console.ReadLine();
     }
     return array;
 }
 
-int[] array = NewArray();
+string[] newArray = new string[default];
+if (question == 1) 
+{
+    Console.WriteLine("Какая длинна должна быть у массива?");
+    size = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("");
+    if (size >  0) 
+    {
+        newArray = NewArray();
+    }
+    else Console.WriteLine("Вы ввели некорректную длину массива.");
+}
+else 
+{
+   newArray = new string[12] {"Hello", "2", "world", ":-)", "1234", "1567", "-2", "computer science", "Russia", "Denmark", "Kazan", "С#"};
+   size = newArray.Length;
+}
 
-void ArrayPrint()
+void ArrayPrint(string[] array)
 {
     int i=0;
-    Console.Write("Из введённых вами чисел:");
+    Console.Write("[");
 
     for (i=0; i<size-1; i++)
     {
         Console.Write($" {array[i]}, ");
     }
-    Console.Write($" {array[i]}");
+    Console.Write($" {array[i]} ]");
 }
-
-ArrayPrint();
+Console.WriteLine("");
+Console.WriteLine("заданный первоначальный массив:");
+Console.WriteLine("");
+ArrayPrint(newArray);
 Console.WriteLine("");
 
-int PositiveNumber()
+string[] SecondArray(string[] array1)
 {
-    for (int i=0; i<size; i++)
+    string[] array2 = new string[array1.Length];
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
     {
-        if (array[i] > 0)
+    if(array1[i].Length <= 3)
         {
-            positive++;
+        array2[count] = array1[i];
+        count++;
         }
     }
-    return positive;
+    return array2;
 }
 
-positive = PositiveNumber();
-Console.WriteLine($"{positive} положительных.");
+string[] endArray = SecondArray(newArray);
+Console.WriteLine("");
+Console.WriteLine("Итоговый массив:");
+Console.WriteLine("");
+ArrayPrint(endArray);
+Console.WriteLine("");

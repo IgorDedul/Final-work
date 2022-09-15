@@ -1,0 +1,15 @@
+D:\Documents\GeekBrains\Final Work\bin\Debug\net6.0\Final Work.exe
+D:\Documents\GeekBrains\Final Work\bin\Debug\net6.0\Final Work.deps.json
+D:\Documents\GeekBrains\Final Work\bin\Debug\net6.0\Final Work.runtimeconfig.json
+D:\Documents\GeekBrains\Final Work\bin\Debug\net6.0\Final Work.dll
+D:\Documents\GeekBrains\Final Work\bin\Debug\net6.0\Final Work.pdb
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.csproj.AssemblyReference.cache
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.AssemblyInfoInputs.cache
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.AssemblyInfo.cs
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.csproj.CoreCompileInputs.cache
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.dll
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\refint\Final Work.dll
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.pdb
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\Final Work.genruntimeconfig.cache
+D:\Documents\GeekBrains\Final Work\obj\Debug\net6.0\ref\Final Work.dll
