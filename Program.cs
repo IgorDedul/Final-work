@@ -38,26 +38,26 @@ void ArrayPrint(string[] array)
     int i=0;
     Console.Write("[");
 
-    for (i=0; i<size-1; i++)
+    for (i=0; i<array.Length-1; i++)
     {
         Console.Write($" {array[i]}, ");
     }
     Console.Write($" {array[i]} ]");
 }
 Console.WriteLine("");
-Console.WriteLine("заданный первоначальный массив:");
-Console.WriteLine("");
+Console.WriteLine("Заданный первоначальный массив:");
 ArrayPrint(newArray);
 Console.WriteLine("");
 
 string[] SecondArray(string[] array1)
 {
-    string[] array2 = new string[array1.Length];
+    string[] array2 = new string[default];
     int count = 0;
     for (int i = 0; i < array1.Length; i++)
     {
     if(array1[i].Length <= 3)
         {
+        Array.Resize(ref array2, array2.Length + 1);
         array2[count] = array1[i];
         count++;
         }
@@ -68,6 +68,5 @@ string[] SecondArray(string[] array1)
 string[] endArray = SecondArray(newArray);
 Console.WriteLine("");
 Console.WriteLine("Итоговый массив:");
-Console.WriteLine("");
 ArrayPrint(endArray);
 Console.WriteLine("");
