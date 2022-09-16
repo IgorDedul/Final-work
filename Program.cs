@@ -29,7 +29,6 @@ if (size >  0)
 else if (size ==  0) 
 {
    newArray = new string[12] {"Hello", "2", "world", ":-)", "1234", "1567", "-2", "computer science", "Russia", "Denmark", "Kazan", "С#"};
-   size = newArray.Length;
 }
 else Console.WriteLine("Вы ввели некорректную длину массива.");
 
